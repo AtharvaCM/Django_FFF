@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <!--main CSS file-->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'freshfromfarm/css/style.css' %}">
+</head>
+
+<body>
+
+    <div>
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+            <div class="container my-0">
+                <a class="navbar-brand py-0" href="/">
+                    <div class="p-0">
+                        <!----
+                        <img src="images/Nishad_Lettring.png" alt="" height="48px">
+                        <img src="images/Nishad_Bird.png" alt="" height="40px">
+                        -->
+                        <div class="logo">
+                            <h1 class="logo-text">FreshFromFarm <span>(FFF)</span></h1>
+                        </div>
+                    </div>
+
+                </a>
+
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarid">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarid">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-1">
+                            <a class="nav-link" href="/">Home&nbsp;<i class="fas fa-home"></i></a>
+                        </li>
+
+                        <!-- Dropdown --
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                Gallery&nbsp;<i class="fas fa-camera-retro    "></i>
+                            </a>
+                            <div class="dropdown-menu bg-dark navbar-li-gallery">
+                                <a class="dropdown-item" href="gallery.html">Chandrashekhar with Dev Anand</a>
+                                <a class="dropdown-item" href="gallery_celebrities.html">Chandrashekhar with
+                                    Celebrities</a>
+                                <a class="dropdown-item" href="gallery_photos.html">Team Nishad : Co-Singers</a>
+                                <a class="dropdown-item" href="gallery_nishad_team.html">Team Nishad : Musicians</a>
+
+                                <ul style="list-style: none;">
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item second-a" tabindex="-1" href="#">Nishad's Dancicle shows
+                                            <i class="fas fa-caret-down    "></i></a>
+                                        <ul class="dropdown-menu bg-dark navbar-li-gallery">
+                                            <li><a class="dropdown-item" tabindex="-1"
+                                                    href="gallery_dancicle_1.html">Pinjra-Jait Re Jait</a>
+                                            </li>
+                                            <li><a class="dropdown-item" tabindex="-1"
+                                                    href="gallery_dancicle_2.html">Ranga Lok kalecha</a></li>
+                                            <li><a class="dropdown-item" tabindex="-1"
+                                                    href="gallery_dancicle_3.html">Dadagiri</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <a class="dropdown-item" href="gallery_videos.html">Videos</a>
+                                <a class="dropdown-item" href="gallery_articles.html">Articles</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item mx-1">
+                            <a class="nav-link" href="events.html">Events&nbsp;<i class="fas fa-calendar    "></i></a>
+                        </li>
+                    -->
+                        <li class="nav-item mx-1">
+                            <a class="nav-link" href="/about">About Us&nbsp;<i class="fas fa-info-circle    "></i></a>
+                        </li>
+                        <li class="nav-item mx-1">
+                            <a class="nav-link" href="/contact">Contact Us&nbsp;<i class="fas fa-phone    "></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--NAVBAR-END-->
+    </div>
+
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>
