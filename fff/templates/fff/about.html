@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!--main-->
+<div id="about" class="container-fluid pt-5">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2 class="text-center">About Company Page</h2>
+            <br />
+            <h4>
+                <span style="color: #008489; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;FreshFromFarm</span>
+                is a portal for farmers to sell their goods directly to the
+                customers from which the farmers will get a justifiable amount
+                <i class="fas fa-rupee-sign"></i>
+                for their products.
+            </h4>
+            <br />
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp; For many years in India we keep hearing
+                'farmer commited suicide' for various reasons, one of which is, not
+                getting fair price for the goods they are producing. We shop at the
+                market or a mart where we need to pay a significant amount for our
+                vegetables. But most oftenly this amount contains a cut for the
+                mediators who bring you the vegetables or the goods from the
+                farmers. This is okay if they are paying enough to the producers for
+                all the work they put in but this is not the case. ergo, we at
+                FreshFromFarm have taken the initiative to provide a platform for
+                the 'Kisan'(s) of the India to sell their products for a just price
+                and with no greedy mediators.
+            </p>
+            <br /><a href="/contact/" class="btn btn-lg btn-outline-info">Get in Touch</a>
+        </div>
+        <div class="col-sm-4">
+            <!--</span> class="glyphicon glyphicon-signal logo"</span>></span>-->
+            <span><img src="{% static 'fff/images/about/farmer.jpg' %}" alt="" class="farmer-img" />
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-grey about-cont">
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="logo slideanim">
+                <i class="fas fa-globe"></i>
+            </span>
+        </div>
+        <div class="col-sm-8">
+            <h2>Our Values</h2>
+            <br />
+            <h4>
+                <strong>MISSION:</strong> Our mission is to help farmers get the
+                amount they deserve for their produce and to make these goods
+                available for the common man of India for a reasonable price.
+            </h4>
+            <br />
+            <p>
+                <strong>VISION:</strong> Our VISION is to make India digital and
+                include farmers as well as the daily customers dive into E-Commerce.
+            <p class="high" style="color: orangered; font-size: large;">Jai Jawan, Jai Kisan</p>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

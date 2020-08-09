@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
 
-    <!--main CSS file-->
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'freshfromfarm/css/style.css' %}">
+    <!--Font Awesome CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'fff/css/all.min.css' %}">
+    <!--Bootstrap core CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'fff/css/bootstrap.css' %}">
+    <!--main CSS file-->
+    <link rel="stylesheet" type="text/css" href="{% static 'fff/css/style.css' %}">
 </head>
 
 <body>
@@ -23,9 +27,7 @@
                         <img src="images/Nishad_Lettring.png" alt="" height="48px">
                         <img src="images/Nishad_Bird.png" alt="" height="40px">
                         -->
-                        <div class="logo">
-                            <h1 class="logo-text">FreshFromFarm <span>(FFF)</span></h1>
-                        </div>
+                        <p class="text-light my-auto">FreshFromFarm <span class="text-info">(FFF)</span></p>
                     </div>
 
                 </a>
@@ -90,8 +92,135 @@
         <!--NAVBAR-END-->
     </div>
 
-    {% block content %}
-    {% endblock %}
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <!--Change the social media links laters-->
+    <footer class="footer-main pt-4">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column --
+        <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+          <-- Content --
+          <h5 class="font-weight-bold text-uppercase mb-4">Footer Content</h5>
+          <p>.</p>
+
+        </div>
+        <-- Grid column --
+
+        <hr class="clearfix w-100 d-md-none">-->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>
+                                <a href="#">PROFILE</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="#">Membership</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="#">AWARDS</a>
+                            </p>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+                    <!-- Contact details -->
+                    <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>
+                                <i class="fas fa-home mr-3"></i> Pune, Maharashtra, India</p>
+                        </li>
+                        <li>
+                            <p>
+                                <i class="fas fa-envelope mr-3"></i> nishad.pune@gmail.com</p>
+                        </li>
+                        <li>
+                            <p>
+                                <i class="fas fa-phone mr-3"></i> + 91 98220 45546</p>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-2 text-center mx-auto my-4 social-links">
+
+                    <!-- Social buttons -->
+                    <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
+
+                    <!-- Facebook -->
+                    <a type="button" href="https://www.facebook.com/chandrashekhar.mahamuni" target="_blank"
+                        class="btn-lg btn-fb">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <!-- YT -->
+                    <a type="button" href="https://www.youtube.com/user/shekharmahamuni/featured" target="_blank"
+                        class="btn-lg btn-yt">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <!-- Google +-->
+                    <a type="button" href="#" class="btn-lg btn-gplus">
+                        <i class="fab fa-google-plus-g"></i>
+                    </a>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright & Designed by:
+            <a href="https://atharvacm.netlify.com" target="_blank" class="footer-copyright-link"> AtharvaCM |
+                FreakyDOMINIC</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+    <!--Bootstrap JS files-->
+    {% load static %}
+    <script type="text/javascript" src="{% static 'fff/js/jQuery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fff/js/popper.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fff/js/bootstrap.js' %}"></script>
+    <!--Custom Scripts-->
+    <script type="text/javascript" src="{% static 'fff/js/scripts.js' %}"></script>
 </body>
 
 </html>
