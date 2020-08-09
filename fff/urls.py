@@ -8,6 +8,8 @@ app_name = 'fff'
 
 urlpatterns = [
     path('', views.index, name='freshfromfarm-home'),
+    path('home/', views.index, name='freshfromfarm-home'),
     path('about/', views.about, name='freshformfarm-about'),
+    path('services/', views.services, name='freshfromfarm-services'),
     path('contact/', views.contact, name='freshfromfarm-contact'),
 ]

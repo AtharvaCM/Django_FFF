@@ -10,6 +10,27 @@ $(document).ready(function () {
     e.stopPropagation();
     //e.preventDefault(); this stops a links from working
   });
+
+  //scroll to top code------------------------------
+  var mybutton = document.getElementById("myBtn");
+  console.log(mybutton)
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () {
+    scrollFunction()
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
 });
 
 // script for dark mode
@@ -29,27 +50,3 @@ $(".inner-switch").on("click", function () {
  addClass() adds the .dark class to the HTML when the user switches to dark mode,
  text() sets the text of the label on the switch — it’s either “OFF” or “ON”.
 */
-
-//scroll to top code
-function load() {
-  var mybutton = document.getElementById("myBtn");
-  console.log(mybutton)
-
-  // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function () {
-    scrollFunction()
-  };
-
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
-}
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}

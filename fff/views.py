@@ -19,3 +19,9 @@ def contact(request):
     template_name = 'fff/contact.html'
     context = {}
     return render(request, template_name, context)
+
+
+def services(request):
+    template_name = 'fff/services.html'
+    context = {}
+    return render(request, template_name, context)

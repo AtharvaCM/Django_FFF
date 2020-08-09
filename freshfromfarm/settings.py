@@ -85,7 +85,7 @@ DATABASES = {
 
         'USER': 'atharvacm',
 
-        'PASSWORD': '',
+        'PASSWORD':  '',
 
         'HOST': '/var/run/postgresql',
 
@@ -131,6 +131,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
 
 STATICFILES_FINDERS = {
     'django.contrib.staticfiles.finders.FileSystemFinder',
