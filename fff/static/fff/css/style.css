@@ -88,14 +88,14 @@ h6 {
 }
 .navbar-li-gallery,
 .second-a {
-  background-color: black !important;
+  /* background-color: black !important; */
 }
 .navbar-li-gallery a,
 .second-a {
   color: white !important;
 }
 .navbar-li-gallery a:hover {
-  color: black !important;
+  /* color: black !important; */
   background-color: rgb(184, 183, 183) !important;
 }
 .dropdown-submenu {
@@ -227,6 +227,63 @@ h6 {
   visibility: visible;
 }
 
+/*============================ Login Page CSS ===============================*/
+.login-form {
+  /* border: 1px solid red; */
+  width: 320px;
+  /* height: 420px; */
+  background: rgba(0, 0, 0, 0.2); /*makes it a bit darker*/
+  color: #fff;
+  /* position: relative;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  box-sizing: border-box;*/
+  padding: 50px 30px;
+}
+.login-form label {
+  font-size: large;
+}
+.login-form input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.login-form input[type="text"],
+input[type="password"],
+input[type="email"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+.login-form input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #1c8adb;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+.login-form input[type="submit"]:hover {
+  cursor: pointer;
+  background: #39dc79;
+  color: #000;
+  transition: all 0.5s;
+}
+.login-form a {
+  /* float: right; */
+  text-decoration: none;
+  /* font-size: 14px; */
+  color: #fff;
+  line-height: 2;
+}
+.login-form a:hover {
+  color: #39dc79;
+}
 /*============================ DARK MODE CSS ===============================*/
 /*always must be at the bottom of the css page*/
 .dark,

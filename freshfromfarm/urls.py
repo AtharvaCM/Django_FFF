@@ -23,4 +23,5 @@ urlpatterns = [
     # path('about/', views.about, name='freshformfarm-about'),
     # path('contact/', views.contact, name='freshfromfarm-contact'),
     path('admin/', admin.site.urls),
+    path('product/', include('product.urls')),
 ]
