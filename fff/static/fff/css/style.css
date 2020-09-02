@@ -286,6 +286,75 @@ input[type="email"] {
 .login-form a:hover {
   color: #39dc79;
 }
+
+/*============================ Orders Page ===============================*/
+.card-tile,
+.tile-img {
+  border-radius: 5px;
+}
+.card-tile:hover {
+  box-shadow: 1rem 1rem 1rem -1rem #fffffff6 !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+}
+.tile-img:hover {
+  cursor: pointer;
+}
+
+.parent {
+  overflow: hidden;
+  cursor: pointer;
+}
+.child {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.parent:hover .child,
+.parent:focus .child {
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.plus-tag {
+  display: none;
+  font-size: 35px !important;
+  color: #ffffff !important;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  /*text-decoration: none;*/
+}
+.parent:hover .child:before,
+.parent:focus .child:before {
+  display: block;
+}
+
+.parent:hover .plus-tag,
+.parent:focus .plus-tag {
+  display: block;
+}
+.child:before {
+  content: "";
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*background-color: rgba(52, 73, 94, 0.75);*/
+}
 /*============================ DARK MODE CSS ===============================*/
 /*always must be at the bottom of the css page*/
 .dark,
