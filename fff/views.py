@@ -82,9 +82,10 @@ def register(request):
             )
             email.content_subtype = 'html'
             email.send()
-            return HttpResponse('Please confirm your email address to complete the registration')
-            # login(request, user)
-            # return redirect(reverse('login'))
+            template = 'fff/confirm_mail.html'
+            context = {}
+            return render(request, template, context)
+            # return HttpResponse('Please confirm your email address to complete the registration')
         else:
             print(form.errors.as_text())
             return redirect(reverse('register'))
@@ -106,6 +107,9 @@ def activate(request, uidb64, token):
         user.save()
         login(request, user)
         # return redirect('home')
-        return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
+        template = 'fff/activate.html'
+        context = {}
+        return render(request, template, context)
+        # return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
     else:
         return HttpResponse('Activation link is invalid!')
