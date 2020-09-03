@@ -10,11 +10,12 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    title = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
     price = models.FloatField()
     stock = models.IntegerField(default='0')
     categories = models.ManyToManyField('Category', related_name='products')
+    image = models.ImageField(upload_to='products/', default="zzz")
     image_src = models.CharField(max_length=2083, blank=True)
 
     # dynamic urls

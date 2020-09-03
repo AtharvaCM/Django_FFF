@@ -21,12 +21,15 @@ from . import views, settings
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+from product.views import cart_detail
+
 urlpatterns = [
     path('', include('fff.urls')),
     # path('about/', views.about, name='freshformfarm-about'),
     # path('contact/', views.contact, name='freshfromfarm-contact'),
     path('admin/', admin.site.urls),
     path('product/', include('product.urls')),
+    path('cart/cart-detail/', cart_detail, name='cart_detail')
 ]
 
 urlpatterns += staticfiles_urlpatterns()

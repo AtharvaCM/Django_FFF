@@ -42,14 +42,18 @@
                 {% endif %}
             </p>
             <p>Price : {{product.price}}</p>
-            <form action="/product/{{catagory}}/{{ product.pk }}/" method="post">
+            <!-- <form action="/product/{{catagory}}/{{ product.pk }}/" method="post">
                 {% csrf_token %}
                 <div class="form-group">
                     Qty : {{ form.qty }}
                 </div>
                 <a class="btn btn-md btn-primary" type="submit">Add to cart &nbsp;<i
                         class="fas fa-shopping-cart    "></i></a>
-            </form>
+            </form> -->
+            <a href="{% url 'product:cart_add' product.id %}">Add To Cart</a>
+            <a href="{% url 'product:cart_clear' %}">Clear Cart</a>
+            <a href="{% url 'product:item_increment' product.pk %}">Increament</a>
+            <a href="{% url 'product:item_decrement' product.pk %}">Decrement</a>
         </div>
     </div>
 </div>
