@@ -88,10 +88,10 @@ h6 {
     rgba(0, 0, 0, 0.3)
   ) !important;
 }
-.navbar-li-gallery,
+/* .navbar-li-gallery,
 .second-a {
-  /* background-color: black !important; */
-}
+  background-color: black !important;
+} */
 .navbar-li-gallery a,
 .second-a {
   color: white !important;
@@ -156,7 +156,7 @@ h6 {
   background-color: rgb(116, 113, 113);
 }
 .carousel-img {
-  height: calc(100vh - 60px) !important;
+  height: calc(100vh - 40px) !important;
 }
 @media screen and (max-width: 700px) {
   .carousel-img {
@@ -287,7 +287,7 @@ input[type="email"] {
   color: #39dc79;
 }
 
-/*============================ Orders Page ===============================*/
+/*============================ Orders / Product Page ===============================*/
 .card-tile,
 .tile-img {
   border-radius: 5px;
@@ -354,6 +354,36 @@ input[type="email"] {
   top: 0;
   left: 0;
   /*background-color: rgba(52, 73, 94, 0.75);*/
+}
+
+/*============================ PRODUCT CATAGORY PAGE ===============================*/
+.prod-catagory-sec {
+  padding-top: 20px;
+}
+.prod-catagory-title {
+  font-family: candal;
+  color: white;
+  animation-name: zagamaga;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  /* border-bottom-right-radius: 10px; */
+  /* border-bottom-left-radius: 10px; */
+  border-radius: 15px;
+}
+.prod-catagory-title-span {
+  text-shadow: 0 0 7px #000;
+}
+
+/* The animation code */
+@keyframes zagamaga {
+  from {
+    background-color: rgb(29, 28, 28);
+  }
+  to {
+    background-color: rgb(126, 126, 126);
+  }
 }
 /*============================ DARK MODE CSS ===============================*/
 /*always must be at the bottom of the css page*/
