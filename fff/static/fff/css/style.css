@@ -385,6 +385,12 @@ input[type="email"] {
     background-color: rgb(126, 126, 126);
   }
 }
+/*============================ EDIT PROFILE ===============================*/
+.edit-profile input {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
 /*============================ DARK MODE CSS ===============================*/
 /*always must be at the bottom of the css page*/
 .dark,
