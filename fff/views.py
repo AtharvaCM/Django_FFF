@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from .forms import CustomUserCreationForm, RegistrationForm, EditProfileForm, EditProfileForm2
+from .forms import RegistrationForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth import login
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
@@ -11,6 +11,8 @@ from django.http import HttpResponse
 from django.core.mail import EmailMessage
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_protect
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 
@@ -115,6 +117,7 @@ def activate(request, uidb64, token):
         return HttpResponse('Activation link is invalid!')
 
 
+@login_required
 def view_profile(request, pk=None):
     if pk:
         user = User.objects.get(pk=pk)
@@ -124,21 +127,50 @@ def view_profile(request, pk=None):
     return render(request, 'fff/profile.html', args)
 
 
+# @login_required
+# def edit_profile(request):
+#     if request.method == 'POST':
+#         form = EditProfileForm(request.POST, instance=request.user)
+#         # form2 = EditProfileForm2(request.POST, instance=request.user)
+
+#         if form.is_valid():
+#             form.save()
+#             # form2.save()
+#             return redirect(reverse('view_profile'))
+#     else:
+#         form = EditProfileForm(instance=request.user)
+#         # form2 = EditProfileForm2(instance=request.user)
+
+#         args = {
+#             'form': form,
+#             # 'form2': form2,
+#         }
+#         return render(request, 'fff/edit_profile.html', args)
+
+
+@login_required
 def edit_profile(request):
+    # Changing email should also require to send the confirmation link to the new email for verificqation
+    # which is not implemented yet
+
+    # In the template, the user should see the current pro pic instead of the image url
+
     if request.method == 'POST':
-        form = EditProfileForm(request.POST, instance=request.user)
-        form2 = EditProfileForm2(request.POST, instance=request.user)
-
-        if form.is_valid() and form2.is_valid():
-            form.save()
-            form2.save()
-            return redirect(reverse('view_profile'))
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(
+            request.POST, request.FILES, instance=request.user.profile)
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            messages.success(request, f'Your profile has been updated')
+            return redirect('view_profile')
     else:
-        form = EditProfileForm(instance=request.user)
-        form2 = EditProfileForm2(instance=request.user)
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profile)
 
-        args = {
-            'form': form,
-            'form2': form2,
-        }
-        return render(request, 'fff/edit_profile.html', args)
+    context = {
+        'u_form': u_form,
+        'p_form': p_form
+    }
+
+    return render(request, 'fff/edit_profile.html', context)
