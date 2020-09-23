@@ -11,7 +11,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('', views.index, name='freshfromfarm-home'),
     path('home/', views.index, name='freshfromfarm-home'),
-    path('about/', views.about, name='freshformfarm-about'),
+    path('about/', views.about, name='freshfromfarm-about'),
     path('services/', views.services, name='freshfromfarm-services'),
     path('contact/', views.contact, name='freshfromfarm-contact'),
     # path('accounts/', include('django.contrib.auth.urls')),
