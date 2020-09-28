@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Product, Category
-from .forms import AddToCartForm
+from .forms import AddToCartForm, DivErrorList
 from cart.views import add_to_cart
 from django.contrib import messages
 
@@ -30,7 +30,8 @@ def product_category(request, category):
 def product_detail(request, category, pk):
     product = Product.objects.get(pk=pk)
     if request.method == 'POST':
-        form = AddToCartForm(request.POST, instance=product)
+        form = AddToCartForm(request.POST, instance=product,
+                             error_class=DivErrorList)
         if form.is_valid():
             msg = form.save(request=request, category=category,
                             product=product, quantity=form.cleaned_data.get('quantity'))
@@ -47,7 +48,7 @@ def product_detail(request, category, pk):
             }
             return render(request, "product/product_detail.html", context)
     else:
-        form = AddToCartForm()
+        form = AddToCartForm(error_class=DivErrorList)
     context = {
         "product": product,
         "form": form,
