@@ -1,5 +1,17 @@
-Product app has the product model and pages.
+User model has Profle(description, city, phone, image) child.
+User should also have a shipping_address(user, ) child model.
+--------------------------------------------------------------------------------------------------
+Product app has the Product model and pages.
+--------------------------------------------------------------------------------------------------
+Cart app should contain the Cart(user, product, qty) model which will store added items and qty.
+The view cart page.
+--------------------------------------------------------------------------------------------------
+Order app should have - 
+Order(user, date_ordered, is_complete, transaction_id) model.
+OrderItem(order, product, qty, date_added) model.
+ShippingAddress(user, order, address, city, state, zipcode).
 
-Cart app should contain the cart model which will store added items and qty. The view cart page.
+Order details can be accquired using views.
+--------------------------------------------------------------------------------------------------
 
-Order app should have Order model
+

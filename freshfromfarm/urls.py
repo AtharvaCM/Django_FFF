@@ -27,6 +27,7 @@ urlpatterns = [
     # path('contact/', views.contact, name='freshfromfarm-contact'),
     path('admin/', admin.site.urls),
     path('product/', include('product.urls')),
+    path('cart/', include('cart.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -17,6 +17,9 @@ class Product(models.Model):
     categories = models.ManyToManyField('Category', related_name='products')
     image_src = models.CharField(max_length=2083, blank=True)
 
+    def __str__(self):
+        return str(self.title)
+
     # dynamic urls
     def get_absolute_url(self):
         # f"/products/{self.id}/"

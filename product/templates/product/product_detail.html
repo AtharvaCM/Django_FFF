@@ -42,14 +42,27 @@
                 {% endif %}
             </p>
             <p>Price : {{product.price}}</p>
-            <form action="/product/{{catagory}}/{{ product.pk }}/" method="post">
+            <!-- <form action="/product/{{category.name}}/{{ product.pk }}/" method="post"> -->
+            <form method="POST">
                 {% csrf_token %}
-                <div class="form-group">
-                    Qty : {{ form.qty }}
-                </div>
-                <a class="btn btn-md btn-primary" type="submit" style="color: white;">Add to cart &nbsp;<i
-                        class="fas fa-shopping-cart    "></i></a>
+                <!-- <div class="form-group">
+                    Qty : {{ form.quantity }}
+                </div> -->
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-md btn-primary" value="Add to cart &nbsp;">
+                <!-- <a class="btn btn-md btn-primary" type="submit" style="color: white;">Add to cart &nbsp;<i
+                        class="fas fa-shopping-cart    "></i></a> -->
+                <!-- on submit(POST req) all the info should go into the product view and then call the add to cart func -->
             </form>
+            {% if flag == 1 %}
+            <div class="alert alert-success mt-3">
+                <strong>Success!</strong> {{msg}}.
+            </div>
+            {% elif flag == 2 %}
+            <div class="alert alert-danger mt-3">
+                <strong>Whoops!</strong> {{msg}}.
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>

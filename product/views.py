@@ -1,7 +1,10 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Product, Category
-from .forms import QtyForm
+from .forms import AddToCartForm
+from cart.views import add_to_cart
+from django.contrib import messages
+
 
 # Create your views here.
 
@@ -26,14 +29,30 @@ def product_category(request, category):
 
 def product_detail(request, category, pk):
     product = Product.objects.get(pk=pk)
-    form = QtyForm()
     if request.method == 'POST':
-        form = QtyForm(request.POST)
+        form = AddToCartForm(request.POST, instance=product)
         if form.is_valid():
-            form.save()
+            msg = form.save(request=request, category=category,
+                            product=product, quantity=form.cleaned_data.get('quantity'))
+            print(msg)
+            if msg == f'Item added in cart':
+                flag = 1
+            else:
+                flag = 2
+            context = {
+                "product": product,
+                "form": form,
+                "msg": msg,
+                "flag": flag
+            }
+            return render(request, "product/product_detail.html", context)
+    else:
+        form = AddToCartForm()
     context = {
         "product": product,
         "form": form,
+        "msg": None,
+        "flag": 0
     }
     return render(request, "product/product_detail.html", context)
 
