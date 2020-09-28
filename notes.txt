@@ -1,0 +1,5 @@
+Product app has the product model and pages.
+
+Cart app should contain the cart model which will store added items and qty. The view cart page.
+
+Order app should have Order model

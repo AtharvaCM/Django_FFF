@@ -17,7 +17,9 @@ class TestViews(TestCase):
         self.product_category_url = reverse(
             'product:product_category', args=['category1'])
         self.product_detail_url = reverse(
-            'product:product_detail', args=['category1', '1'])
+            'product:product_detail', args=['category1', '3'])
+        # product_detail_GET faisl coz the setUp gets called 3 times and the product id became 3
+        # so either use separate setup or pass the corect id
 
     def test_category_list_GET(self):
         # test
@@ -32,3 +34,10 @@ class TestViews(TestCase):
         # assert
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'product/product_catagory.html')
+
+    def test_product_detail_GET(self):
+        # test
+        response = self.client.get(self.product_detail_url)
+        # assert
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'product/product_detail.html')
