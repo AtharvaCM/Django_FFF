@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import django_heroku
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
 
 from pathlib import Path
 import os
@@ -28,7 +30,7 @@ SECRET_KEY = 'p%itx3t_jzx7afm5^bd3)8)hiuwj$9o^m!hjs4t&do$png^u76'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,22 +84,32 @@ WSGI_APPLICATION = 'freshfromfarm.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         # 'NAME': BASE_DIR / 'db.sqlite3',
+#         'NAME': 'freshfromfarm',
+
+#         'USER': 'atharvacm',
+
+#         'PASSWORD':  '',
+
+#         'HOST': '/var/run/postgresql',
+
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        'NAME': 'freshfromfarm',
-
-        'USER': 'atharvacm',
-
-        'PASSWORD':  '',
-
-        'HOST': '/var/run/postgresql',
-
-        'PORT': '5432',
     }
 }
 
+DATABASES = {'default': dj_database_url.config()}
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
